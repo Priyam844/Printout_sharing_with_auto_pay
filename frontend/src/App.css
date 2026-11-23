@@ -1,0 +1,172 @@
+/* Components - using utility classes from index.css */
+
+/* Layout */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color var(--transition), background-color var(--transition);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.nav-link:not(.active) {
+  color: var(--text-secondary);
+}
+
+.nav-link:not(.active):hover {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.nav-icon {
+  margin-right: 0.375rem;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+}
+
+.mobile-menu-btn {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: var(--text-secondary);
+}
+
+.mobile-menu-btn:hover {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.mobile-menu {
+  display: block;
+  padding: 1rem 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.main {
+  flex: 1;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Mobile overrides */
+@media (min-width: 640px) {
+  .nav-desktop {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .header-content,
+  .footer-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .footer-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

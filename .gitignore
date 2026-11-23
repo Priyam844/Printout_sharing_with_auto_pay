@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+db.sqlite3
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node and frontend builds
+node_modules/
+frontend/dist/
+frontend/build/
+
+# Django generated files
+staticfiles/
+printshare/staticfiles/
+
+# Keep only frontend assets referenced by the Django template
+static_src/assets/*
+!static_src/assets/index-C8lxpBYI.js
+!static_src/assets/index-C4qI5fPk.css
+!static_src/assets/pdf.worker-CORpI1nH.mjs
+
+# User uploads
+media/
+
+# Print host local configuration and logs
+print-host/config.local.yaml
+print-host/*.log
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp

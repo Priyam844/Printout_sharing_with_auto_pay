@@ -1,0 +1,5 @@
+Create a Django project where a user can share their document. Share the document for printing. The shared document will be auto-printed after taking the payment. 
+You will use an open-source UPI dynamic QR generator for the payment. 
+Before printing, the user can have an option for selecting paper size, selecting the color (black and white or color), and some other settings that will matter in printing. 
+Redact root frontend also with the backend. You can use SQLite for now. 
+Let's build it. 

@@ -1,0 +1,19 @@
+# Print Host Requirements
+# Core
+pyyaml>=6.0
+requests>=2.31.0
+urllib3>=2.0
+
+# Printer backends
+# For IPP/CUPS printing
+# pyipp>=0.1.0  # Optional, for advanced IPP support
+
+# For Windows printing
+pywin32>=306; sys_platform == "win32"
+
+# Development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.12.0
+black>=23.0
+ruff>=0.1.0

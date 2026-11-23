@@ -1,0 +1,44 @@
+# Print Host Configuration
+# Copy to config.local.yaml for local overrides
+
+printer:
+  # Connection string - examples:
+  # IPP: "ipp://192.168.1.100:631/printers/Xerox"
+  # CUPS: "cups://Xerox_WorkCentre"
+  # Windows USB: "usb://Xerox/WorkCentre_7845"
+  # Auto-detect: "auto"
+  connection: "auto"
+  
+  # Fallback for Windows when IPP fails
+  windows_fallback: true
+
+central_api:
+  base_url: "http://localhost:8000/api"
+  api_key: "CHANGE_ME_IN_PRODUCTION"
+  poll_interval_seconds: 10
+  timeout_seconds: 30
+  # For production, use https and verify SSL
+  verify_ssl: false
+
+host:
+  # Unique identifier for this print host
+  host_id: "print-host-001"
+  # Human-readable name
+  name: "Shop Floor Printer"
+  # Location description
+  location: "Main Shop Floor"
+
+logging:
+  level: "INFO"
+  file: "print-host.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+job_processing:
+  # Max concurrent print jobs (usually 1 for physical printer)
+  max_concurrent: 1
+  # Retry failed jobs after this many seconds
+  retry_delay_seconds: 60
+  max_retries: 3
+  # Download timeout for print files
+  download_timeout_seconds: 60

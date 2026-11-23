@@ -1,0 +1,26 @@
+[Unit]
+Description=Print Host Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=printuser
+WorkingDirectory=/opt/print-host
+Environment=PRINT_HOST_CONFIG=/opt/print-host/config.local.yaml
+ExecStart=/opt/print-host/venv/bin/python main.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/print-host
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
